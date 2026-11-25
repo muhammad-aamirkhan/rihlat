@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b2b">
+
+  <meta name="description"
+    content="Rihlat Al Imaan — A journey of faith, care and excellence.">
+
+  <title>Rihlat Al Imaan | Coming Soon</title>
+
+  <style>
+    /* =================================
+       1. GLOBAL SETTINGS
+    ================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px 22px;
+
+      background: #101b2b;
+      color: #ffffff;
+
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+
+      position: relative;
+      isolation: isolate;
+      overflow-x: hidden;
+    }
+
+
+    /* =================================
+       2. MAKKAH BACKGROUND PHOTOGRAPH
+    ================================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+
+      background-image:
+        url("rihlat-background.jpg");
+
+      background-size: cover;
+      background-position: center 68%;
+      background-repeat: no-repeat;
+
+      transform: scale(1.02);
+    }
+
+
+    /* =================================
+       3. ATMOSPHERIC NAVY OVERLAY
+    ================================= */
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8, 20, 37, 0.78),
+          rgba(8, 20, 37, 0.38),
+          rgba(8, 20, 37, 0.25)
+        ),
+        linear-gradient(
+          0deg,
+          rgba(5, 14, 26, 0.62),
+          rgba(5, 14, 26, 0.08)
+        );
+    }
+
+
+    /* =================================
+       4. MAIN CONTAINER
+    ================================= */
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+
+      padding: 30px 10px;
+
+      position: relative;
+    }
+
+
+    /* =================================
+       5. GOLDEN MONOGRAM
+    ================================= */
+
+    .monogram {
+      width: 76px;
+      height: 76px;
+
+      margin: 0 auto 25px;
+
+      border: 1.5px solid #e5bd70;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #e5bd70;
+
+      font-family: Georgia, serif;
+      font-size: 43px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+
+    /* =================================
+       6. BRAND IDENTITY
+    ================================= */
+
+    .brand {
+      color: #fff2d6;
+
+      font-size: clamp(38px, 8vw, 60px);
+      letter-spacing: 9px;
+
+      font-weight: normal;
+    }
+
+    .brand-sub {
+      color: #e5bd70;
+
+      font-size: 15px;
+      letter-spacing: 8px;
+
+      margin-top: 5px;
+    }
+
+
+    /* =================================
+       7. ARABIC TAGLINE
+    ================================= */
+
+    .arabic {
+      color: #f7e9ce;
+
+      font-size: clamp(23px, 5vw, 31px);
+
+      margin: 30px 0 38px;
+
+      line-height: 1.8;
+      direction: rtl;
+    }
+
+
+    /* =================================
+       8. DECORATIVE ORNAMENT
+    ================================= */
+
+    .ornament {
+      width: 100px;
+      height: 1px;
+
+      background: #cba45d;
+
+      margin: 0 auto 35px;
+    }
+
+
+    /* =================================
+       9. MAIN MESSAGE
+    ================================= */
+
+    h1 {
+      color: #fff6e8;
+
+      font-size: clamp(31px, 6vw, 46px);
+      font-weight: normal;
+
+      line-height: 1.25;
+
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #e5bd70;
+      font-style: italic;
+    }
+
+    .description {
+      color: #e6e2db;
+
+      font-size: clamp(15px, 3vw, 19px);
+      line-height: 1.8;
+
+      margin-bottom: 40px;
+    }
+
+
+    /* =================================
+       10. LOADING PROGRESS BAR
+    ================================= */
+
+    .progress {
+      height: 6px;
+      width: 100%;
+
+      background: rgba(255,255,255,0.22);
+
+      border: 1px solid rgba(229,189,112,0.55);
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      margin-bottom: 19px;
+    }
+
+    .bar {
+      height: 100%;
+      width: 0%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #d7a84e,
+          #ffe3a1
+        );
+
+      border-radius: 20px;
+
+      animation: loading 3s linear infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+
+    /* =================================
+       11. LOADING STATUS
+    ================================= */
+
+    .status {
+      color: #edc77e;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+
+      letter-spacing: 4px;
+      font-weight: 600;
+    }
+
+
+    /* =================================
+       12. FOOTER
+    ================================= */
+
+    footer {
+      margin-top: 65px;
+
+      color: rgba(255,255,255,0.85);
+
+      font-size: 13px;
+      letter-spacing: 1px;
+
+      line-height: 1.8;
+    }
+
+    footer span {
+      display: block;
+
+      color: #dcb86e;
+
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+
+    /* =================================
+       13. MOBILE RESPONSIVENESS
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 24px 20px;
+      }
+
+      body::before {
+        background-position: center 60%;
+      }
+
+      body::after {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(8, 20, 37, 0.55),
+            rgba(8, 20, 37, 0.65)
+          );
+      }
+
+      .container {
+        padding: 20px 5px;
+      }
+
+      .brand {
+        letter-spacing: 6px;
+      }
+
+      .brand-sub {
+        letter-spacing: 6px;
+      }
+
+      .arabic {
+        margin: 25px 0 32px;
+      }
+
+      .description {
+        margin-bottom: 35px;
+      }
+
+      footer {
+        margin-top: 48px;
+      }
+    }
+
+
+    /* =================================
+       14. REDUCED MOTION ACCESSIBILITY
+    ================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .bar {
+        animation: none;
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="container">
+
+    <!-- Brand monogram -->
+    <div class="monogram">M</div>
+
+
+    <!-- Brand identity -->
+    <div class="brand">RIHLAT</div>
+
+    <div class="brand-sub">AL IMAAN</div>
+
+
+    <!-- Arabic tagline -->
+    <p class="arabic" lang="ar">
+      خِدْمَةُ ضُيُوفِ الرَّحْمَٰنِ
+    </p>
+
+
+    <!-- Decorative divider -->
+    <div class="ornament"></div>
+
+
+    <!-- Main message -->
+    <h1>
+      A Journey of Faith
+      <span>Awaits...</span>
+    </h1>
+
+
+    <!-- Supporting message -->
+    <p class="description">
+      A journey inspired by faith,<br>
+      guided by care and meaningful experiences.<br>
+      <br>
+      Something beautiful is taking shape.
+    </p>
+
+
+    <!-- Independent animated loading bar -->
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+
+
+    <!-- Loading status -->
+    <p class="status">
+      WEBSITE LOADING...
+    </p>
+
+
+    <!-- Footer -->
+    <footer>
+      © 2026 Rihlat Al Imaan
+
+      <span>
+        Muhammad Aamir Khan
+      </span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
